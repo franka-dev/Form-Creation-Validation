@@ -12,19 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
         let isValid = true;
         const messages = [];
 
-        // Username validation
         if (username.length < 3) {
             isValid = false;
             messages.push("Username must be at least 3 characters.");
         }
 
-        // Email validation
         if (!email.includes("@") || !email.includes(".")) {
             isValid = false;
             messages.push("Please enter a valid email address.");
         }
 
-        // Password validation
         if (password.length < 8) {
             isValid = false;
             messages.push("Password must be at least 8 characters.");
@@ -35,11 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isValid) {
             feedbackDiv.textContent = "Registration successful!";
             feedbackDiv.style.color = "#28a745";
-            feedbackDiv.style.backgroundColor = "#d4edda";
         } else {
             feedbackDiv.innerHTML = messages.join("<br>");
-            feedbackDiv.style.color = "#d8000c";
-            feedbackDiv.style.backgroundColor = "#ffbaba";
+            feedbackDiv.style.color = "#dc3545";
         }
     });
 });
